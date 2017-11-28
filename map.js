@@ -8,6 +8,25 @@ var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니�
 
 var markers = [];
 
+var positions = [
+    {
+        title: '카카오',
+        latlng: new daum.maps.LatLng(33.450705, 126.570677)
+    },
+    {
+        title: '생태연못',
+        latlng: new daum.maps.LatLng(33.450936, 126.569477)
+    },
+    {
+        title: '텃밭',
+        latlng: new daum.maps.LatLng(33.450879, 126.569940)
+    },
+    {
+        title: '근린공원',
+        latlng: new daum.maps.LatLng(33.451393, 126.570738)
+    }
+];
+
 function addMarker(position) {
 
     // 마커를 생성합니다
@@ -20,6 +39,12 @@ function addMarker(position) {
 
     // 생성된 마커를 배열에 추가합니다
     markers.push(marker);
+}
+
+
+
+for (var i = 0; i < positions.length; i ++) {
+    addMarker(positions[i].latlng);
 }
 
 // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
@@ -50,7 +75,7 @@ if (navigator.geolocation) {
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
 
-addMarker(locPosition);
+    addMarker(locPosition);
 
     var iwContent = message, // 인포윈도우에 표시할 내용
         iwRemoveable = true;
