@@ -1510,7 +1510,7 @@ var positions = [
 }
 ];
 // 마커 이미지의 이미지 주소입니다
-var imageSrc = "./img/t_pointer.jpg";
+var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
 for (var i = 0; i < positions.length; i ++) {
 
